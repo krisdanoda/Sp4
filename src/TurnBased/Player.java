@@ -79,7 +79,23 @@ public class Player extends CharacterClass {
         }
     }
 
+    public void move(int endX, int endY) {
 
+        Tile tempTile = this.placement;
+        try {
+            Tile newTile = Main.map.room[endX][endY];
+            if (newTile.getImpassable() == false) {
+                this.xy = new PVector((newTile.getX() - tempTile.getX()) * 32, (newTile.getY() - tempTile.getY()) * 32);
+                Main.map.room[endX][endY].setCharacter(this);
+                setPlacement(Main.map.room[endX][endY]);
+                tempTile.setCharacter(null);
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.printf("cant leave room lol");
+
+        }
+
+    }
 
 
     void updateAnimationCounter() {

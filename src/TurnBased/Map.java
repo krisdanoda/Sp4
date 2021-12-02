@@ -21,6 +21,7 @@ public class Map {
             for (int j = 0; j<room[i].length; j++) {
                 room[i][j] = new GrassField(i,j, pApplet);
             }
+        room[1][1]= new Mountain(1,1,pApplet);
     }
 
     void display(int x, int y) {

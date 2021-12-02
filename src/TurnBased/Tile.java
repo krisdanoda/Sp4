@@ -34,4 +34,12 @@ int x,y;
     public int getY() {
         return y;
     }
+
+    public Boolean getImpassable() {
+        return impassable;
+    }
+
+    public void setImpassable(Boolean impassable) {
+        this.impassable = impassable;
+    }
 }

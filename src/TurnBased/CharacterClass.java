@@ -63,8 +63,6 @@ abstract public class CharacterClass {
     public void move(int endX, int endY){
 
         Tile tempTile = this.placement;
-
-
         try {
             Tile newTile = Main.map.room[endX][endY];
             this.xy = new PVector((newTile.getX() - tempTile.getX()) * 32, (newTile.getY() - tempTile.getY()) * 32);
@@ -75,7 +73,6 @@ abstract public class CharacterClass {
             System.out.printf("cant leave room lol");
 
         }
-
 
     }
 
